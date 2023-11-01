@@ -1,0 +1,8 @@
+[debug] > Exec(build, None, None)
+[error] Not a valid command: build
+[error] Not a valid project ID: build
+[error] Expected ':'
+[error] Not a valid key: build (similar: loadedBuild, isMetaBuild)
+[error] build
+[error]      ^
+[debug] > Exec(idea-shell, None, None)
