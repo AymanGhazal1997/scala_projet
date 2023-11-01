@@ -1,31 +1,27 @@
-Projet Scala - Gestion de Bibliothèque
+Projet Scala - Gestion de Bibliothèque  (créée par MOUTARAD Hicham et GHAZAL Ayman)
 
-
-Ce projet Scala vise à développer une application de gestion de bibliothèque créée par MOUTARAD Hicham et GHAZAL Ayman.
 
 Ce descriptif explique la méthodologie ainsi que les attributs de chaque classe.
 
 
-Classes
+Classes & Attributs
 
-/Livre/
-
-[Attributs]
+[Attributs] 
+Livre
 - `titre` :  Une chaîne de caractères
 - `auteur` : Une chaîne de caractères
 - `annee de publication` : Une valeur numérique
 - `estEmprunte` : Un booléen (par défaut à false, false signifie que le livre n'est pas emprunté et est disponible dans la bibliothèque)
 
- [Méthodes]
- - `emprunter` : Modifie l'état d'un livre récemment emprunté à TRUE
- - `rendre` : Modifie l'état d'un livre précédemment emprunté et rendu à FALSE
-
-/Bibliotheque/
-
-[Attributs]
+Bibliotheque
 - `listeDeLivres` : Une liste initialement vide, mais à laquelle on ajoutera des instances de la classe Livre.
   
 [Méthodes]
+ Livre
+ - `emprunter` : Modifie l'état d'un livre récemment emprunté à TRUE
+ - `rendre` : Modifie l'état d'un livre précédemment emprunté et rendu à FALSE
+ - 
+Bibliotheque
 - `ajouterLivre` : Prend en paramètre un objet de type Livre à ajouter à la liste listeDeLivres.
 - `rechercherParTitre`: Prend en paramètre le titre d'un livre de type chaîne de caractères, recherche le livre dans la liste par son titre, et renvoie une Option[Livre] qui peut contenir soit une valeur (Some) si le livre est trouvé, soit aucune valeur (None) s'il n'est pas trouvé.
 - `rechercherParAuteur`: Fonctionnant de la même manière que la méthode rechercherParTitre, cette méthode effectue la recherche en fonction de l'auteur du livre.
