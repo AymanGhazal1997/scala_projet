@@ -9,6 +9,7 @@ object main extends App {
   biblio.chargerDepuisFichier("biblio.csv")
 
   var continuer = true
+  
   while (continuer) {
     println("\nMenu:")
     println("1. Ajouter un livre")
