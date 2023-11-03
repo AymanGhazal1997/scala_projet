@@ -8,10 +8,12 @@ import scala.util.{Failure, Success, Try}
 class Bibliotheque {
   var listeDeLivres: List[Livre] = List()
 
+  // Méthode pour ajouter un livre à la bibliothèque
   def ajouterLivre(livre: Livre): Unit = {
     listeDeLivres = listeDeLivres :+ livre
   }
 
+  // Méthode pour emprunter un livre par titre
   def emprunterLivre(titre: String): Try[Unit] = {
     var livre=rechercherParTitre(titre)
     livre match {
@@ -25,6 +27,7 @@ class Bibliotheque {
     }
   }
 
+  // Méthode pour rendre un livre par titre
   def rendreLivre(titre: String): Try[Unit] = {
     var livre=rechercherParTitre(titre)
     livre match {
@@ -38,15 +41,17 @@ class Bibliotheque {
     }
   }
 
+  // Méthode pour rechercher un livre par titre
   def rechercherParTitre(titre: String): Option[Livre] = {
     listeDeLivres.find(_.titre.toLowerCase == titre.toLowerCase)
   }
 
-
+// Méthode pour rechercher un livre par auteur
   def rechercherParAuteur(auteur: String): Option[Livre] = {
     listeDeLivres.find(_.auteur.toLowerCase == auteur.toLowerCase)
   }
 
+  // Méthode pour sauvegarder la bibliothèque dans un fichier
   def sauvegarderDansFichier(nomFichier: String): Unit = {
       val outputPath = s"$nomFichier"
       val p=getClass.getResource(outputPath).getPath
@@ -60,7 +65,7 @@ class Bibliotheque {
   }
 
 
-
+// Méthode pour charger la bibliothèque depuis un fichier
   def chargerDepuisFichier(nomFichier: String): Unit = {
     val resourceStream = getClass.getResourceAsStream(nomFichier)
     if (resourceStream == null) {
